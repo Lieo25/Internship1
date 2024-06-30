@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translated Train Details</title>
+</head>
+<body>
+    <h1>Translated Train Details</h1>
+
+    <table border="1">
+        <tr>
+            <th>Train Number</th>
+            <th>Train Name</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Arrival Date and Time</th>
+            <th>Platform Number</th>
+        </tr>
+        {% for train in trainobj %}
+        <tr>
+            <td>{{ train.train_No }}</td>
+            <td>{{ train.train_name }}</td>
+            <td>{{ train.train_source }}</td>
+            <td>{{ train.train_destn }}</td>
+            <td>{{ train.arrivaldatatime }}</td>
+            <td>{{ train.platformNo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

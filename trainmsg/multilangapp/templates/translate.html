@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center text-2xl mt-10" ><b>Traininfo</b></h1><br><br>
+
+    <table class="table w-full border">
+        <tr class="bg-blue-700 text-white border-2" >
+            <th >Train No</th>
+            <th>Train Name</th>
+            <th>Train Source</th>
+            <th>Train Destination</th>
+            <th>Arrival Date and Time</th>
+            <th>Platform No</th>
+            <th>Action</th>
+        </tr>
+        {% for trainobj in trainobj %}
+        <tr>
+            <td>{{trainobj.train_No}}</td>
+            <td>{{trainobj.train_name}}</td>
+            <td>{{trainobj.train_source}}</td>
+            <td>{{trainobj.train_destn}}</td>
+            <td>{{trainobj.arrivaldatatime}}</td>
+            <td>{{trainobj.platformNo}}</td>
+            <td>
+                <a href="/multilangapp/detail/{{trainobj.train_No}}">Detail</a>
+                <a href="/multilangapp/update/{{trainobj.train_No}}">Update</a>
+
+{% endblock %}

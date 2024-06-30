@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mt-4 mx-auto max-w-lg w-full ">
+        <div class="bg-blue-800 p-3">
+            <h1 class="text-2xl font-bold mb-4 text-center text-white">Train Details</h1>
+        </div>
+        <form class="bg-white shadow-md p-6 drop-shadow-lg" method="POST" action="/multilangapp/insert/">
+            {% csrf_token %}
+            
+            <div class="mb-4">
+                <label class="text-gray-600 font-semibold mb-2" for="train_No">Train No:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" id="trainNo" name="train_No" placeholder="Enter Train Number">
+            </div>
+            <div class="mb-4">
+                <label class=" text-gray-600 font-semibold mb-2" for="train_name">Train Name:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" id="trainName" name="train_name" placeholder="Enter Train Name">
+            </div>
+            <div class="mb-4">
+                <label class=" text-gray-600 font-semibold mb-2" for="train_source">Train Source:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" id="trainSource" name="train_source" placeholder="Enter Train Source">
+            </div>
+            <div class="mb-4">
+                <label class=" text-gray-600 font-semibold mb-2" for="train_destn">Train Destination:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" id="trainDest" name="train_destn" placeholder="Enter Train Destination">
+            </div>
+            <div class="mb-4">
+                <label class=" text-gray-600 font-semibold mb-2" for="trainDateTime">Train Date & Time:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="datetime-local" name="arrivaldatatime" id="trainDateTime">
+            </div>
+            <div class="mb-4">
+                <label class=" text-gray-600 font-semibold mb-2" for="platformNo">Platform No:</label>
+                <input class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" type="text" id="platformNo" name="platformNo" placeholder="Enter Platform No">
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" type="submit">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
+
+

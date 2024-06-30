@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+<h1 class="text-center text-2xl mt-10" ><b>Traininfo</b></h1><br><br>
+<div>
+    <form class ="" action="" method="post">
+    {% csrf_token %}
+    <label for="language">Select Language:</label>
+    <select name="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+    </select>
+    <div>
+        <input class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" type="submit" value="Submit">
+    </div>
+</form>
+    
+</div>
+
+    <table class="table w-full border mt-4">
+        <tr class="bg-blue-700 text-white border-2" >
+            <th >Train No</th>
+            <th>Train Name</th>
+            <th>Train Source</th>
+            <th>Train Destination</th>
+            <th>Arrival Date and Time</th>
+            <th>Platform No</th>
+            
+        </tr>
+        {% for trainobj in trainobj %}
+        <tr>
+            <td>{{trainobj.train_No}}</td>
+            <td>{{trainobj.train_name}}</td>
+            <td>{{trainobj.train_source}}</td>
+            <td>{{trainobj.train_destn}}</td>
+            <td>{{trainobj.arrivaldatatime}}</td>
+            <td>{{trainobj.platformNo}}</td>
+            
+                
+        </tr>
+        {% endfor %}
+    
+    </table>
+
+{% endblock %}
+
