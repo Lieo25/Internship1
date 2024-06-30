@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <form method="post" onsubmit=functionX() id="form">
+        {% csrf_token %}
+        
+        <center>
+            <h1>Student Registration</h1>
+        </center>
+        <body bgcolor="lightblue" align="center"></body>
+        <label for="Name">Student Name</label><br>
+                <select id="satffname" name="name">
+            <option value="Ms.P.Suganthi">Ms.P.Suganthi</option>
+            <option value="Ms.L.Thangapalani">Ms.L.Thangapalani</option>
+            <option value="Ms.Roopa">Ms.Roopa</option>
+            <option value="Ms.G.Nirmala Devi">Ms.G.Nirmala Devi</option>
+            <option value="Dr.D.Rajalakshmi">Dr.D.Rajalakshmi</option>
+            <option value="Ms.Keerthana">Ms.Keerthana</option>
+        </select>
+
+        <br>
+
+        <label for="Rollno">Rollno</label><br>
+        <input type="text" id="rollno" name="rollno"><br>
+
+        <label for="Date">Date</label><br>
+        <input type="date" id="date" name="date"><br>
+
+        <label for="1">1</label><br>
+        <input type="text" id="one" name="one"><br>
+
+        <label for="2">2</label><br>
+        <input type="text" id="two" name="two"><br>
+
+        <label for="3">3</label><br>
+        <input type="text" id="three" name="three" {% if value = 'A' style="background-color: tomato;"%}><br>
+
+        <label for="4">4</label><br>
+        <input type="text" id="four" name="four"><br>
+
+        <label for="5">5</label><br>
+        <input type="text" id="five" name="five"><br>
+
+        <label for="6">6</label><br>
+        <input type="text" id="six" name="six"><br>
+
+        <label for="7">7</label><br>
+
+        <input type="text" id="seven" name="seven"><br>
+
+
+        
+        
+        
+
+
+
+        
+
+        <input type="submit" value="Submit">
+    </form>
