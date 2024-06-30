@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+        
+<head>
+    <meta charset="UTF-8">
+    <title>table data</title>
+</head>
+<style>
+.zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+</style>
+<body background="table.jpg">
+    <h1>Enter the datas</h1>
+    <b>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+        <label for="fname">Name:</label><br>
+        <input type="text" id="fname" name="fname" value="{%if update_mem%}{{update_mem.name}}{%endif%}"><br>
+        <label for="lname">Email:</label><br>
+        <input type="text" id="lname" name="lname" value="{%if update_mem%}{{update_mem.email}}{%endif%}"><br>
+        <input type="submit" value="Add Data">
+    </form>
+
+    </b>
+    <h1>view data</h1>
+    <a href=""><button>fetch and refresh</button></a>
+    <table class="zui-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ i.name}}</td>
+                <td>{{ i.email}}</td>
+                <td><a href="/delete/{{i.id}}"><button>delete</button></a></td>
+                <td><a href="/update/{{i.id}}"><button>update</button></a></td>
+
+
+            </tr>
+
+            {% endfor %}
+
+
+
+        </thead>
+    </table>
+    
+    
+</body>
+</html>
